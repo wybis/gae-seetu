@@ -1,0 +1,15 @@
+<div class="navbar navbar-app navbar-absolute-top">
+	<div class="navbar-brand navbar-brand-center" x-ui-yield-to="title">
+       	Seetu
+	 </div>
+	<div class="btn-group pull-left">
+    	<div x-ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+        	<i class="fa fa-bars"></i> Menu
+       	</div>
+	</div>
+    <div class="btn-group pull-right" ui-yield-to="navbarAction" x-ng-show="isLoggedIn">
+    	<div x-ui-toggle="uiSidebarRight" class="btn">
+       		<i class="fa fa-bell"></i> Messages
+    	</div>
+    </div>
+</div>

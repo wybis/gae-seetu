@@ -1,0 +1,86 @@
+<br/>
+<div class="panel panel-default">
+	<div class="panel-heading text-center">
+		<span class="pull-left">
+			<button	class="btn btn-default"	x-ng-disabled="items.length == 0"
+				x-ng-click="refresh()">
+				<i class="fa fa-refresh"></i>
+			</button>
+		</span>
+		&nbsp;
+	</div>
+	<table class="table table-condensed table-bordered table-striped">
+	<thead>
+	<tr>
+		<th class="text-right" width="30">#</th>
+		<th class="text-center"><small>Id</small></th>
+	   	<th class="text-center"><small>Name</small></th>
+	   	<th class="text-center"><small>Value</small></th>
+	   	<th class="text-center"><small>Commision</small></th>
+	   	<th class="text-center"><small>Start Date</small></th>
+	   	<th class="text-center"><small>Auction Date</small></th>
+	   	<th class="text-center"><small>Com AccId</small></th>
+	   	<th class="text-center"><small>Itm AccId</small></th>
+	   	<th class="text-center"><small>Status</small></th>
+	   	<th class="text-center"><small>Date</small></th>
+	   	<th class="text-center"><small>User</small></th>
+		<th class="text-center" width="40">&nbsp;</th>	   	
+	</tr>
+	</thead>
+	<tbody>
+	<tr x-ng-repeat="item in items">
+		<td class="text-right" width="40">
+			{{$index+1}}
+		</td>
+		<td class="text-right">
+			{{item.id}}
+		</td>
+		<td class="text-left">
+			{{item.name}}
+		</td>
+		<td class="text-right">
+			{{item.value | number : 2}}
+		</td>
+		<td class="text-right">
+			{{item.opearatorCommision}}%
+		</td>
+		<td class="text-center" width="120">
+			{{item.startDate | date:'yyyy-MM-dd'}}
+		</td>
+		<td class="text-center" width="120">
+			{{item.auctionDate | date:'yyyy-MM-dd'}}
+		</td>
+		<td class="text-right">
+			{{item.commisionAccountId}}
+		</td>
+		<td class="text-right">
+			{{item.itemAccountId}}
+		</td>
+		<td>
+			{{item.status}}
+		</td>
+		<td class="text-center" width="160">
+			{{item.updateTime | date:'yyyy-MM-dd HH:mm:ss'}}
+		</td>
+		<td>
+			{{item.userId}}
+		</td>
+		<td width="40">
+			&nbsp;
+		</td>	
+	</tr>
+	</tbody>
+	<tfoot x-ng-show="searchResults.hasItems">
+	<tr>
+		<td>&nbsp;</td>
+		<td colspan="6">
+			<buttton class="btn btn-info btn-block"	
+				x-ng-click="loadMore()">
+				Load More
+			</buttton>
+		</td>
+		<td>&nbsp;</td>
+	</tr>	
+	</tfoot>
+	</table>
+</div>

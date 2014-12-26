@@ -1,0 +1,13 @@
+<div class="container-fluid">
+
+	<div class="col-md-3">
+		<strong><small>{{viewName | capitalizeFilter}}</small></strong>
+	</div>
+	<div class="col-md-9 text-right" x-ng-show="isLoggedIn">
+		<strong><small>User : </small></strong>
+		<span class="text-primary"><strong><small>
+		{{sessionContext.sessionUser.id}} / {{sessionContext.sessionUser.role.name}}Administrator
+		</small></strong></span>
+	</div>
+
+</div>

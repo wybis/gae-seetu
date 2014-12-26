@@ -1,0 +1,56 @@
+<div class="scrollable">
+	<h1 class="scrollable-header app-name">Seetu</h1>
+   	
+   	<div class="scrollable-content" x-ng-hide="isLoggedIn">
+		<div class="list-group" x-ui-turn-off="uiSidebarLeft">
+        	<a class="list-group-item" href="#/home">
+        		Home <i class="fa fa-home pull-right"></i>
+        	</a>
+			<a class="list-group-item" href="#/signin">
+				Sign In <i class="fa fa-sign-in pull-right"></i>
+			</a>
+		</div>
+	</div>
+
+   	<div class="scrollable-content" x-ng-show="isLoggedIn">
+		<div class="list-group" ui-turn-off="uiSidebarLeft">
+			<div class="list-group-item">
+				<i class="fa fa-user"></i>
+				{{sessionContext.sessionUser.firstName}} - {{sessionContext.sessionUser.id}} 
+				<a class="pull-right" href="#/settings">
+					<i class="fa fa-cog"></i>
+				</a>
+			</div>
+        	<a class="list-group-item" href="#/home">
+        		Home <i class="fa fa-home pull-right"></i>
+        	</a>
+        	
+			<a class="list-group-item" href="#/bidding">
+				Bidding
+			</a>
+			
+			<a class="list-group-item" href="#/customers">
+				Subscribers <i class="fa fa-users pull-right"></i>
+			</a>
+			
+			<a class="list-group-item" href="#/items">
+				Chits <i class="fa fa-database pull-right"></i>
+			</a>
+			<a class="list-group-item" href="#/itemTransactions">
+				Chit Transactions <i class="fa fa-history pull-right"></i>
+			</a>
+			
+			<a class="list-group-item" href="#/accounts">
+				Accounts <i class="fa fa-database pull-right"></i>
+			</a>
+			<a class="list-group-item" href="#/accountTransactions">
+				Account Transactions <i class="fa fa-history pull-right"></i>
+			</a>
+			
+			<a class="list-group-item" href="#/signout">
+				Sign Out <i class="fa fa-sign-out pull-right"></i>
+			</a>
+		</div>
+	</div>
+
+</div>

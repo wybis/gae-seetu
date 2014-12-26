@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queue-entries>
+	<total-storage-limit>50M</total-storage-limit>
+	<queue>
+		<name>defaultEmailQueue</name>
+		<rate>1/s</rate>
+	</queue>
+</queue-entries>

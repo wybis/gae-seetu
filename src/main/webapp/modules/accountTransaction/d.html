@@ -1,0 +1,84 @@
+<form class="form-horizontal well well-sm" x-role="form">
+	<input class="form-control" type="text" placeholder="User Id"
+	          			x-ng-model="accountId">
+</form>
+
+<div class="panel panel-default">
+	<div class="panel-heading text-center">
+		<span class="pull-left">
+			<a href="accountTransactions/searchResults/{{searchResults.id}}"
+				class="btn btn-default"
+				x-ng-disabled="searchResults.id == 0">
+				<i class="fa fa-refresh"></i>
+			</a>
+		</span>
+		<!-- 		
+		Search Id : <span class="text-info">{{searchResults.id}}</span>&nbsp;&nbsp;
+		Page <span class="text-info">{{searchResults.currentPageLabel}}</span> 
+		of <span class="text-info">{{searchResults.totalPages}}</span>
+		-->
+		&nbsp;
+	</div>
+	<table class="table table-condensed table-bordered table-striped">
+	<thead>
+	<tr>
+		<th class="text-right" width="30">#</th>
+		<th class="text-center"><small>Id</small></th>
+	   	<th class="text-center"><small>AccountId</small></th>
+	   	<th class="text-center"><small>Type</small></th>
+	   	<th class="text-center"><small>Amount</small></th>
+	   	<th class="text-center"><small>Balance</small></th>
+	   	<th class="text-center"><small>Description</small></th>
+	   	<th class="text-center"><small>Date</small></th>
+	   	<th class="text-center"><small>User</small></th>
+		<th class="text-center" width="40">&nbsp;</th>	   	
+	</tr>
+	</thead>
+	<tbody>
+	<tr x-ng-repeat="item in searchResults.items | filter : { accountId : accountId}">
+		<td class="text-right" width="40">
+			{{$index+1}}
+		</td>
+		<td class="text-right">
+			{{item.id}}
+		</td>
+		<td class="text-right">
+			{{item.accountId}}
+		</td>
+		<td width="120">
+			{{item.type}}
+		</td>
+		<td class="text-right">
+			{{item.amount | number : 2}}
+		</td>
+		<td class="text-right">
+			{{item.balance | number : 2}}
+		</td>
+		<td>
+			{{item.description}}
+		</td>
+		<td width="160">
+			{{item.date | date:'yyyy-MM-dd HH:mm:ss'}}
+		</td>
+		<td>
+			{{item.userId}}
+		</td>
+		<td width="40">
+			&nbsp;
+		</td>	
+	</tr>
+	</tbody>
+	<tfoot x-ng-show="searchResults.hasItems">
+	<tr>
+		<td>&nbsp;</td>
+		<td colspan="6">
+			<buttton class="btn btn-info btn-block"	
+				x-ng-click="loadMore()">
+				Load More
+			</buttton>
+		</td>
+		<td>&nbsp;</td>
+	</tr>	
+	</tfoot>
+	</table>
+</div>

@@ -1,0 +1,10 @@
+<div class="alerts alert-fixed-top">
+	<div class="alert" x-ng-repeat="alert in notifyService.alerts"
+x-ng-class="{ 'alert-success': alert.success, 'alert-info': alert.info, 'alert-warning': alert.warning,'alert-danger': alert.error}">
+		<button type="button" class="close" x-dismiss="alert"
+			x-ng-click="notifyService.remove(alert)">
+			&times;
+		</button>
+		{{alert.message}}
+	</div>
+</div>

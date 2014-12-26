@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+	<cron>
+		<url>/cron/dailyBackup</url>
+		<description>Daily backup</description>
+		<schedule>every 24 hours synchronized</schedule>
+		<timezone>Asia/Kolkata</timezone>
+	</cron>
+</cronentries>

@@ -1,0 +1,90 @@
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : maxmoney-vteial
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Wireless LAN adapter vteial-hotspot-for-airtel:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Hosted Network Virtual Adapter
+   Physical Address. . . . . . . . . : 1C-3E-84-E5-08-79
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Local Area Connection* 12:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
+   Physical Address. . . . . . . . . : 1E-3E-84-E5-08-79
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Bluetooth Device (Personal Area Network)
+   Physical Address. . . . . . . . . : 1C-3E-84-E5-08-7A
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Broadcom 802.11n Network Adapter
+   Physical Address. . . . . . . . . : 1C-3E-84-E5-08-79
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::1474:8f00:8f5a:3cc4%4(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.1.104(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Friday, December 26, 2014 4:38:21 PM
+   Lease Expires . . . . . . . . . . : Saturday, December 27, 2014 12:38:20 PM
+   Default Gateway . . . . . . . . . : fe80::fedd:55ff:fe04:aae4%4
+                                       192.168.1.1
+   DHCP Server . . . . . . . . . . . : 192.168.1.1
+   DHCPv6 IAID . . . . . . . . . . . : 337395332
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-19-CB-AE-68-28-D2-44-28-DA-F7
+   DNS Servers . . . . . . . . . . . : fd00::1
+                                       fd00::1
+                                       8.8.8.8
+                                       8.8.4.4
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Qualcomm Atheros AR8171/8175 PCI-E Gigabit Ethernet Controller (NDIS 6.30)
+   Physical Address. . . . . . . . . : 28-D2-44-28-DA-F7
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Tunnel adapter Local Area Connection* 3:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Teredo Tunneling Pseudo-Interface
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : 2001:0:9d38:6abd:1c74:3b6f:8b35:599d(Preferred) 
+   Link-local IPv6 Address . . . . . : fe80::1c74:3b6f:8b35:599d%8(Preferred) 
+   Default Gateway . . . . . . . . . : ::
+   DHCPv6 IAID . . . . . . . . . . . : 167772160
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-19-CB-AE-68-28-D2-44-28-DA-F7
+   NetBIOS over Tcpip. . . . . . . . : Disabled
+
+Tunnel adapter isatap.{208CBE2C-1F1E-4EA2-BD71-35147311A1B8}:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft ISATAP Adapter #2
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes

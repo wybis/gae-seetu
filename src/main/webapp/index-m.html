@@ -1,0 +1,89 @@
+<html lang="en" class="no-js" x-ng-app="app" x-ng-controller="rootController">
+<head>
+
+<title>Seetu</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="assets/maui/css/mobile-angular-ui-hover.css" />
+<link rel="stylesheet" href="assets/maui/css/mobile-angular-ui-base.css" />
+<link rel="stylesheet" href="assets/maui/css/mobile-angular-ui-desktop.css" />
+    
+</head>
+<body x-ng-clock>
+
+	<div x-ng-include="'modules/zgeneral/sideBarLeft-m.html'" 
+		class="sidebar sidebar-left" 
+		ui-track-as-search-param="true">
+	</div>
+	<div x-ng-include="'modules/zgeneral/sideBarRight-m.html'" 
+		class="sidebar sidebar-right">
+	</div>
+	
+	<div class="app">
+		
+		<div x-ng-include="'modules/zgeneral/headerNavigatorDirective-m.html'"></div>
+	
+		<div class="app-body" x-ng-class="{loading: loading}">
+			<div x-ng-show="loading" class="app-content-loading">
+	        	<i class="fa fa-spinner fa-spin loading-spinner"></i>
+	        </div>
+	        <div class="app-content">
+	        	<x-ng-view></x-ng-view>
+	        </div>
+		</div>
+
+		<div x-ng-include="'modules/zgeneral/footerNavigatorDirective-m.html'"></div>
+		
+	</div>
+
+<script type="text/javascript"
+	src="assets/lib/lodash.min.js"></script>
+<script type="text/javascript"
+	src="assets/lib/underscore.string.min.js"></script>
+<script type="text/javascript" 
+	src="assets/lib/moment.min.js"></script>
+<script type="text/javascript" 
+	src="assets/lib/jquery.min.js"></script>
+<script type="text/javascript" 
+	src="assets/lib/holder.js"></script>
+
+<script type="text/javascript"
+	src="assets/angular/13x/angular.js"></script>
+<script type="text/javascript"
+	src="assets/angular/13x/angular-route.min.js"></script>
+<script type="text/javascript"
+	src="assets/angular/13x/angular-sanitize.min.js"></script>
+
+<script type="text/javascript" 
+	src="assets/lib/ngStorage.min.js"></script>
+
+<script type="text/javascript" 
+ 	src="assets/maui/js/mobile-angular-ui.min.js"></script>
+
+<script type="text/javascript" src="modules/init.js"></script>
+
+<script type="text/javascript" src="modules/session/sessionService.js"></script>
+
+<script type="text/javascript" src="modules/bidding/biddingController.js"></script>
+
+<script type="text/javascript" src="modules/item/itemController.js"></script>
+<script type="text/javascript" src="modules/itemTransaction/itemTransactionController.js"></script>
+<script type="text/javascript" src="modules/customer/customerController.js"></script>
+<script type="text/javascript" src="modules/account/accountController.js"></script>
+<script type="text/javascript" src="modules/accountTransaction/accountTransactionController.js"></script>
+<script type="text/javascript" src="modules/user/userController.js"></script>
+
+<script type="text/javascript" src="modules/home/indexController.js"></script>
+<script type="text/javascript" src="modules/session/settingController.js"></script>
+<script type="text/javascript" src="modules/session/loginController-m.js"></script>
+<script type="text/javascript" src="modules/session/logoutController.js"></script>
+
+<script type="text/javascript" src="modules/common.js"></script>
+<script type="text/javascript" src="modules/directives.js"></script>
+<script type="text/javascript" src="modules/main-m.js"></script>
+
+</body>
+</html>

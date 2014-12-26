@@ -1,0 +1,35 @@
+<div class="container-fluid">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" 
+			x-toggle="collapse" x-target=".navbar-inverse-collapse"">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="index.html">Seetu</a>
+	</div>
+	<div class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+			<li><a x-ng-href="#{{homeView}}"><i class="fa fa-home"></i> Home</a></li>
+		</ul>
+		<ul class="nav navbar-nav" x-ng-show="isLoggedIn">
+			<li><a href="#/items"> Chits</a></li>
+			<li><a href="#/itemTransactions"> Chit Transactions</a></li>
+			
+			<li><a href="#/accounts"> Accounts</a></li>
+			<li><a href="#/accountTransactions"> Account Transactions</a></li>
+			
+			<li><a href="#/customers"> Subscribers</a></li>
+			<li><a href="#/users"> Users</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" x-ng-hide="isLoggedIn">
+			<li><a href="#/signin"><i class="fa fa-sign-in"></i> Login</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" x-ng-show="isLoggedIn">
+			<li><a href="#/notifications"><i class="fa fa-bell"></i> &nbsp;</a></li>
+			<li><a href="#/settings"><i class="fa fa-cog"></i> Settings</a></li>
+			<li><a href="#/signout"><i class="fa fa-sign-out"></i> Logout</a></li>
+		</ul>
+	</div>
+</div>
