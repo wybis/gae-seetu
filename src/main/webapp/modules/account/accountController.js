@@ -1,7 +1,7 @@
 function accountController($rootScope, $scope, $log, accountService) {
 	$rootScope.viewName = 'Accounts';
 
-	$scope.items = accountService.items
+	$scope.items = accountService.items;
 
 	$scope.refresh = function() {
 		accountService.all();

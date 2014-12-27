@@ -1,6 +1,7 @@
 <form class="form-horizontal well well-sm" x-role="form">
+	<label>Account Id </label>
 	<input class="form-control" type="text" placeholder="User Id"
-	          			x-ng-model="accountId">
+		x-ng-model="searchFilters.accountId">
 </form>
 
 <div class="panel panel-default">
@@ -23,7 +24,6 @@
 	<thead>
 	<tr>
 		<th class="text-right" width="30">#</th>
-		<th class="text-center"><small>Id</small></th>
 	   	<th class="text-center"><small>AccountId</small></th>
 	   	<th class="text-center"><small>Type</small></th>
 	   	<th class="text-center"><small>Amount</small></th>
@@ -35,12 +35,9 @@
 	</tr>
 	</thead>
 	<tbody>
-	<tr x-ng-repeat="item in searchResults.items | filter : { accountId : accountId}">
+	<tr x-ng-repeat="item in searchResults.items | filter : { accountId : searchFilters.accountId}">
 		<td class="text-right" width="40">
 			{{$index+1}}
-		</td>
-		<td class="text-right">
-			{{item.id}}
 		</td>
 		<td class="text-right">
 			{{item.accountId}}

@@ -1,5 +1,13 @@
-function customerController($rootScope, $scope, $log) {
+function customerController($rootScope, $scope, $log, customerService) {
 	$rootScope.viewName = 'Subscribers';
+
+	$scope.items = customerService.items;
+
+	$scope.refresh = function() {
+		customerService.all();
+	};
+
+	$scope.refresh();
 
 	$log.debug('customerController...');
 }
