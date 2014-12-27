@@ -1,18 +1,12 @@
 <html lang="en" class="no-js" x-ng-app="app" x-ng-csp x-ng-controller="rootController">
 <head>
-<title>Seetu</title>
+<title>Seetu - Dev Console</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" >
 <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css">
-<!-- 
-<link rel="stylesheet" href="assets/ui-select/selectize.bootstrap3.css" />
-<link rel="stylesheet" href="assets/ui-select/select.min.css" />
--->
-<link rel="stylesheet" href="assets/style-1.css" />
-<link rel="stylesheet" href="assets/style-0.css" />
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -23,48 +17,57 @@
 </head>
 <body x-ng-clock>
 
-<br/><br/><br/>
+<br/>
 
-<section>
-	<div class="text-center">
-		<h1>Welcome to Seetu!</h1>
+<div class="row">
+	<div class="col-md-2 text-center">
+		<strong>Seetu Console</strong>
 	</div>
-	<div class="text-center">
-		&nbsp;
+	<div class="col-md-5 text-center">
+		<a class="navbar-link"  href="_ah/admin/">Google Datastore</a>
+		<b> | </b>
+		<a class="navbar-link"  href="_ah/gaelyk-datastore-viewer/browse">Gaelyk Datastore</a>
+		<b> | </b>
+		<a class="navbar-link"  href="_ah/gaelyk-console/">Gaelyk Console</a>
 	</div>
-	<div class="text-center">
+	<div class="col-md-5">
 		<a href="index-d.html" class="btn btn-primary">Destop/Tablet</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="index-m.html" class="btn btn-primary">Tablet/Mobile</a>
 	</div>
-</section>
+</div>
 
-<br/><br/><br/>
+<br/>
 
-<footer>
-	<div class="text-center">
-		<small>
-   			<a  class="navbar-link" href="system/init">Init Data</a>
-   			<b> | </b>
-   			<a  class="navbar-link" href="system/clear">Clear Data</a>
-   			<b> | </b>
-   			<a  class="navbar-link" href="system/initTransactions">Init Transactions</a>
-   			<b> | </b>
-   			<a  class="navbar-link" href="system/clearTransactions">Clear Transactions</a>
-   			<b> | </b>
-   			<a  class="navbar-link" href="sessions/properties">Session Props</a>
-		</small>
-		<br/><br/>
-		<small>
-   			<a class="navbar-link"  href="_ah/admin/">Google Datastore</a>
-   			<b> | </b>
-   			<a class="navbar-link"  href="_ah/gaelyk-datastore-viewer/browse">Gaelyk Datastore</a>
-   			<b> | </b>
-   			<a class="navbar-link"  href="_ah/gaelyk-console/">Gaelyk Console</a>
-		</small>
-		
+<div>
+	<div class="col-md-2">
+		<button class="btn btn-default btn-block" 
+			x-ng-click="execute('/system/reset')">Reset</button> 
+		<br/>
+		<button class="btn btn-default btn-block"
+			x-ng-click="execute('/system/init')">Init Foreman One</button>
+		<br/>
+		<button class="btn btn-default btn-block"
+			x-ng-click="execute('/system/clear')">Clear Foreman One</button>
+		<br/>
+		<button class="btn btn-default btn-block"
+			x-ng-click="execute('/system/initTransactions')">Run Foreman Transactions</button>
+		<br/>
+		<button class="btn btn-default btn-block"
+			x-ng-click="execute('/system/clearTransactions')">Clear Foreman Transactions</button>
+		<br/>
+		<button class="btn btn-default btn-block"
+			x-ng-click="execute('/sessions/properties')">Session Properties</button>
 	</div>
-</footer>
+	<div class="col-md-10">
+		<div class="panel panel-default">
+			<div class="panel-heading">Message</div>
+			<div class="panel-body">
+				<pre>{{message}}</pre>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 <script type="text/javascript"
@@ -92,36 +95,7 @@
 <script type="text/javascript" src="modules/home/indexController.js"></script>
 
 <script type="text/javascript" src="modules/common.js"></script>
-<script type="text/javascript">
-
-function rootController($scope, $log) {
-	$log.info('root...');
-}
-appControllers.controller('rootController', rootController);
-
-var dependents = [ 'ngRoute', 'ngSanitize' ];
-dependents.push('ngStorage');
-dependents.push('app.filters');
-dependents.push('app.directives');
-dependents.push('app.services');
-dependents.push('app.controllers');
-var app = angular.module('app', dependents);
-
-app.config(function($httpProvider) {
-	$httpProvider.interceptors.push('generalHttpInterceptor');
-});
-
-function appInit($log, $window, $sessionStorage) {
-	$log.info('Initialization started...');
-
-	_.mixin(_.str.exports());
-
-	
-	$log.info('Initialization finished...');
-}
-app.run([ '$log', '$window', '$sessionStorage', appInit ]);
-
-</script>
+<script type="text/javascript" src="index-g.js"></script>
 
 </body>
 </html>

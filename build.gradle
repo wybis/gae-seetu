@@ -66,11 +66,6 @@ dependencies {
 
 	compile 'org.gaelyk:gaelyk:2.1.2'
 
-	// http://localhost:8181/_ah/gaelyk-datastore-viewer/browse
-	//compile 'org.gaelyk:gaelyk-datastore-viewer:2.0'
-	// http://localhost:8181/_ah/gaelyk-console/
-	compile 'org.gaelyk:gaelyk-console:2.0'
-
 	testCompile 'org.gaelyk:gaelyk-spock:0.4'
 	testCompile "com.google.appengine:appengine-api-stubs:$gaeVersion",
 			"com.google.appengine:appengine-testing:$gaeVersion"

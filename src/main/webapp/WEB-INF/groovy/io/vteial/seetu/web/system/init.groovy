@@ -10,15 +10,14 @@ println 'init started...'
 
 try {
 	User user = new User()
-	user.id = 'vteial'
+	user.id = 'foreman1'
 	user.password = '1234'
-	user.emailId = 'vteial@gmail.com'
-	user.firstName = 'Eialarasu'
-	user.lastName = 'VT'
+	user.emailId = 'foreman1@gmail.com'
+	user.firstName = 'Foreman'
+	user.lastName = 'Foreman'
 	user.status = UserStatus.ACTIVE
 	user.roleId = Role.FOREMAN
 
-	// TODO : login as vteial
 	User sessionUser = user
 
 	userService.add(sessionUser, user)
@@ -47,7 +46,6 @@ try {
 	item.subscriberIds = subscriberAccountIds
 
 	itemService.add(sessionUser, item)
-
 }
 catch(Throwable t) {
 	t.printStackTrace(out)

@@ -10,12 +10,15 @@ import io.vteial.seetu.model.constants.AccountTransactionType
 println 'initTransactions started...'
 
 try {
-
-	User user = User.get('vteial')
-	// TODO : login as vteial
+	User user = User.get('foreman1')
 	User sessionUser = user
 
-	Item item = Item.get(1)
+	def entitys = datastore.execute{
+		from Item.class.simpleName
+		where userId == user.id
+		limit 1
+	}
+	Item item = entitys[0] as Item
 
 	float subscriptionAmount = item.value / item.totalSubscribers
 
@@ -46,7 +49,6 @@ try {
 			itemService.addTransaction(sessionUser, itemTran)
 		}
 	}
-
 }
 catch(Throwable t) {
 	t.printStackTrace(out)

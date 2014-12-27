@@ -15,6 +15,7 @@ all 	'/_ah/warmup',		forward  : '/ping.groovy'
 get 	'/cron/dailyBackup',			forward : '/cron/dailyBackup.groovy'
 
 // data
+get 	'/system/reset',    			forward : '/io/vteial/seetu/web/system/reset.groovy'
 get 	'/system/init',	    			forward : '/io/vteial/seetu/web/system/init.groovy'
 get 	'/system/clear',   				forward : '/io/vteial/seetu/web/system/clear.groovy'
 get 	'/system/initTransactions',   	forward : '/io/vteial/seetu/web/system/initTransactions.groovy'
