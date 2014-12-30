@@ -31,11 +31,11 @@ function loginController($rootScope, $scope, $log, $location, $sessionStorage,
 	}
 	$scope.signin = signin;
 
-	// $timeout(function() {
-	// $log.info('Before signin...');
-	// $scope.signin();
-	// $log.info('After signin...');
-	// }, 1000);
+	 $timeout(function() {
+		$log.info('Before signin...');
+		$scope.signin();
+		$log.info('After signin...');
+	}, 1000);
 
 	$log.debug('loginController...');
 }

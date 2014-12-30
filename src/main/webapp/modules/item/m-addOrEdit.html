@@ -1,0 +1,85 @@
+<div x-ui-content-for="title">
+	<span>{{viewName}}</span>
+</div>
+
+<div class="scrollable">
+
+	<div class="section scrollable-header" x-ng-show="message != ''">
+		&nbsp;{{message}}
+	</div>
+
+<div class="scrollable-content section">
+	<form>
+	<fieldset>
+		<div class="form-group">
+         	<label>Name</label>
+         	<input class="form-control" type="text" placeholder="Name"
+         		x-ng-model="item.name">
+		</div>
+		<div class="form-group">
+         	<label>Value</label>
+			<div class="input-group">
+ 				<div class="input-group-addon">&#8377;</div>         		
+				<input type="text" class="form-control input-sm" placeholder="Value"
+					x-ng-model="item.value"
+					x-input-mask="'decimal'"
+					mask-option="{ allowMinus : false, 'digits' : 2, 'groupSeparator' : ',', 'autoGroup': true }"/>
+			</div>
+		</div>
+		<div class="form-group">
+         	<label>Total Months</label>
+         	<input class="form-control" type="text" placeholder="Total Months"
+         		x-ng-model="item.totalMonths" 
+         		x-input-mask="'integer'"
+				mask-option="{ allowMinus : false}">
+		</div>
+		<div class="form-group">
+         	<label>Total Subscribers</label>
+         	<input class="form-control" type="text" placeholder="Total Subscribers"
+         		x-ng-model="item.totalSubscribers"
+         		x-input-mask="'integer'"
+				mask-option="{ allowMinus : false}">
+		</div>
+		<div class="form-group">
+         	<label>Commision</label>
+			<div class="input-group">
+ 				<div class="input-group-addon"><strong>%</strong></div>         		
+	         	<input class="form-control" type="text" placeholder="Commision"
+	         		x-ng-model="item.commision" 
+	         		x-input-mask="'integer'"
+					mask-option="{ allowMinus : false}">
+			</div>	
+		</div>
+		<div class="form-group">
+         	<label>Start Date</label>
+         	<div class="input-group">
+ 				<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+				<input type="date" id="itemStartDate" 
+					class="form-control input-sm"
+					x-ng-model="item.startDate"/>
+			</div>		
+		</div>
+		<div class="form-group">
+         	<label>Auction Date</label>
+         	<div class="input-group">
+ 				<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+				<input type="date" id="itemAuctionDate" 
+					class="form-control input-sm"
+					x-ng-model="item.auctionDate"/>
+			</div>		
+		</div>
+   	</fieldset>	
+	</form>
+</div>
+
+	<div class="section scrollable-footer">
+		<a class="btn btn-default pull-left" href="#/items">
+	    	Cancel
+	   	</a>
+	  		
+	  	<button class="btn btn-primary pull-right" x-ng-click="save()">
+	    	<i class="fa fa-save"></i> Save
+	   	</button>
+	</div>
+
+</div>

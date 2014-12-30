@@ -18,7 +18,8 @@ appControllers.controller('rootController', rootController);
 
 var dependents = [ 'ngRoute', 'ngSanitize' ];
 dependents.push('ngStorage');
-// dependents.push('green.inputmask4angular');
+dependents.push('ui.select')
+dependents.push('green.inputmask4angular');
 // dependents.push('ngInputDate');
 dependents.push('mobile-angular-ui')
 dependents.push('app.filters');
@@ -27,9 +28,9 @@ dependents.push('app.services');
 dependents.push('app.controllers');
 var app = angular.module('app', dependents);
 
-// app.config(function(uiSelectConfig) {
-// uiSelectConfig.theme = 'select2';
-// });
+app.config(function(uiSelectConfig) {
+	uiSelectConfig.theme = 'select2';
+});
 
 app.config(function($httpProvider) {
 	$httpProvider.interceptors.push('generalHttpInterceptor');
@@ -78,7 +79,7 @@ app.config(function($routeProvider, $locationProvider) {
 		reloadOnSearch : false
 	});
 
-	$routeProvider.when('/bidding', {
+	$routeProvider.when('/auction', {
 		templateUrl : 'modules/bidding/m.html',
 		controller : 'biddingController',
 		reloadOnSearch : false
@@ -87,6 +88,12 @@ app.config(function($routeProvider, $locationProvider) {
 	$routeProvider.when('/items', {
 		templateUrl : 'modules/item/m.html',
 		controller : 'itemController',
+		reloadOnSearch : false
+	});
+
+	$routeProvider.when('/items/:id', {
+		templateUrl : 'modules/item/m-addOrEdit.html',
+		controller : 'itemAddOrEditController',
 		reloadOnSearch : false
 	});
 

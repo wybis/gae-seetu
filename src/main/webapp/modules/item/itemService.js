@@ -33,6 +33,28 @@ function itemService($log, $http, $q) {
 		return deferred.promise;
 	};
 
+	service.list = function() {
+
+	};
+
+	service.setCurrentItemAsNewItem = function() {
+		service.currentItem = {
+			id : 0
+		};
+	};
+
+	service.setCurrentItemById = function(itemId) {
+		var item = service.itemsMap[itemId];
+		service.currentItem = item;
+	}
+
+	service.saveCurrentItem = function() {
+		if (service.currentItem.id == 0) {
+			service.currentItem.id = service.items.length + 1;
+		}
+		addOrUpdateCache(service.currentItem);
+	};
+
 	return service;
 }
 appServices.factory('itemService', itemService);

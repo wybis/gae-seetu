@@ -3,13 +3,25 @@
 </div>
 
 <div class="scrollable">
-<div class="scrollable-content">
-  
-	<div class="list-group text-center">
-    	<div class="list-group-item list-group-item-home">
-        	<h1>chits coming soon!</h1>
-      	</div>  
-	</div>
 
+  	<div class="section scrollable-header">
+  		<a href="#/items/0" class="btn btn-default pull-right">
+  			<i class="fa fa-plus"></i> New
+  		</a>
+  	</div>
+
+<div class="scrollable-content">
+	
+	<div class="list-group" x-ui-scroll-bottom="bottomReached()">
+    	<div class="list-group">
+        	<a class="list-group-item"  x-ng-href="#/items/{{item.id}}" 
+        		x-ng-repeat="item in items">
+	        		{{ item.name }} - &#8377; {{ item.value | number }} 
+	        		<i class="fa fa-chevron-right pull-right"></i>
+        	</a>
+      	</div>
+	</div>
+	
 </div>
+
 </div>
