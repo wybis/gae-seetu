@@ -32,8 +32,9 @@ sourceCompatibility = compatibilityVersion
 targetCompatibility = compatibilityVersion
 
 appengine {
-	httpAddress = '192.168.1.104'
-	httpPort = 8181
+	//httpAddress = '192.168.1.104'
+	//httpAddress = '27.56.186.42'
+	httpPort = 8182
 	disableUpdateCheck = true
 
 	appcfg {
