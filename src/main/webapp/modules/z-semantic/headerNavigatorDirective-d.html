@@ -1,10 +1,26 @@
     <a href="index-d.html" class="brand item">Seetu</a>
-    <a href="#/home" class="item"><i class="home icon"></i>Home</a>
-    <a href="#/chits" class="item">Chits</a>
-    <a href="#/subscribers" class="item">Subscribers</a>
-    <a href="#/accounts" class="item">Accounts</a>
-    <a href="#/users" class="item"><i class="users icon"></i>Users</a>
     
-    <a href="#/signin" class="right item"><i class="sign in icon"></i>Sign In</a>
-    <a href="#/signout" class="right item"><i class="sign out icon"></i>Sign Out</a>
-    <a href="#/settings" class="right item"><i class="setting icon"></i>Settings</a>
+    <a x-ng-href="#{{homeView}}" class="item"><i class="home icon"></i>Home</a>
+    
+    <a href="#/chits" class="item" x-ng-show="isLoggedIn">
+    	Chits
+    </a>
+    <a href="#/subscribers" class="item" x-ng-show="isLoggedIn">
+    	Subscribers
+    </a>
+    <a href="#/accounts" class="item" x-ng-show="isLoggedIn">
+    	Accounts
+    </a>
+    <a href="#/users" class="item" x-ng-show="isLoggedIn">
+    	<i class="users icon"></i>Users
+    </a>
+    
+    <a href="#/signin" class="right item" x-ng-hide="isLoggedIn">
+    	<i class="sign in icon"></i>Sign In
+    </a>
+    <a href="#/signout" class="right item" x-ng-show="isLoggedIn">
+    	<i class="sign out icon"></i>Sign Out
+    </a>
+    <a href="#/settings" class="right item" x-ng-show="isLoggedIn">
+    	<i class="setting icon"></i>Settings
+    </a>

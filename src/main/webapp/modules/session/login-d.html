@@ -1,5 +1,28 @@
-<div class="column">
-   	<div class="ui segment center aligned">
-   		sign in coming soon...
-   	</div>
+<div class="five wide column"></div>
+
+<div class="six wide column">
+ 		
+	<div class="ui form segment">
+		<h4 class="ui dividing header">Sign In</h4>
+		<div class="field">
+			<label>User Id</label>
+			<div class="field">
+          		<input type="text" name="first-name" placeholder="User Id" 
+          			x-ng-model="user.id">
+        	</div>
+        </div>	
+		<div class="field">
+			<label>Password</label>
+			<div class="field">
+          		<input type="password" name="first-name" placeholder="Password" 
+          			x-ng-model="user.password">
+        	</div>
+        </div>
+		<button class="ui primary button" 
+			x-ng-disabled="user.id == ''"
+			x-ng-click="signin()">
+			<i class="sign in icon"></i> Sign In
+		</button>	
+	</div>
+	
 </div>

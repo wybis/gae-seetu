@@ -12,7 +12,7 @@ app.classy.controller({
 		this.$rootScope.viewName = 'Home';
 
 		this.$scope.message = 'Welcome to Seetu!';
-		
+
 		this.log.info('homeController...');
 	}
 

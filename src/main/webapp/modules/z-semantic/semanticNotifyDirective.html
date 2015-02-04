@@ -1,0 +1,9 @@
+<div class="sixteen wide column segment" x-ng-show="notifyService.alerts.length > 0">
+
+<div class="ui message"	x-ng-repeat="alert in notifyService.alerts" 
+x-ng-class="{ 'green': alert.success, 'blue': alert.info, 'yellow': alert.warning, 'red': alert.error}">
+	<i class="close icon" x-ng-click="notifyService.remove(alert)"></i>
+	<p>{{alert.message}}</p>
+</div>
+
+</div>

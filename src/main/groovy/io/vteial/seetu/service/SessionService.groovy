@@ -1,6 +1,7 @@
 package io.vteial.seetu.service;
 
-import io.vteial.seetu.model.User
+import io.vteial.seetu.dto.SessionUserDto
+import io.vteial.seetu.dto.UserDto
 import io.vteial.seetu.service.exceptions.InvalidCredentialException
 import io.vteial.seetu.service.exceptions.ModelNotFoundException
 
@@ -10,20 +11,18 @@ public interface SessionService {
 
 	static String SESSION_USER_KEY = "user"
 
-	static String SESSION_BRANCH_KEY = "branch"
-
 	Map<String, Object> properties(HttpSession session, com.google.appengine.api.users.User appUser)
 
 	void resetPassword(String userId) throws ModelNotFoundException
 
-	User login(HttpSession session, User user)
+	SessionUserDto login(HttpSession session, UserDto userDto)
 	throws InvalidCredentialException
 
-	void logout(HttpSession session, User user)
+	void logout(HttpSession session)
 
-	void changeDetails(User sessionUser, User user)
+	void changeDetails(SessionUserDto sessionUser, UserDto userDto)
 	throws ModelNotFoundException
 
-	void changePassword(User sessionUser, User user)
+	void changePassword(SessionUserDto sessionUser, UserDto userDto)
 	throws ModelNotFoundException, InvalidCredentialException
 }

@@ -18,7 +18,5 @@ class SessionUserDto implements Serializable {
 
 	String lastName
 
-	long agencyId
-
 	User user;
 }

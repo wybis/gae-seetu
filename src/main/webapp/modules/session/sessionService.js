@@ -33,7 +33,7 @@ function sessionService($log, $http, $q) {
 				}
 				deferred.resolve(response);
 			}
-			// $log.info(response);
+			$log.info(response);
 		}).error(function() {
 			deferred.reject("unable to authenticate...");
 		});
@@ -60,4 +60,4 @@ function sessionService($log, $http, $q) {
 
 	return service;
 }
-appServices.factory('sessionService', sessionService);
+app.factory('sessionService', sessionService);

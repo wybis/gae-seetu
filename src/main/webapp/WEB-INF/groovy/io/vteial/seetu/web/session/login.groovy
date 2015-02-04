@@ -1,15 +1,16 @@
 package io.vteial.seetu.web.session
 
 import io.vteial.seetu.dto.ResponseDto
-import io.vteial.seetu.model.User
+import io.vteial.seetu.dto.SessionUserDto
+import io.vteial.seetu.dto.UserDto
 import io.vteial.seetu.service.exceptions.InvalidCredentialException
 
 ResponseDto responseDto = new ResponseDto(type : 1, message : 'Invalid User Id or Password')
 request.responseDto = responseDto
 
-User userA = jsonCategory.parseJson(request, User.class)
+UserDto userDto = jsonCategory.parseJson(request, UserDto.class)
 try {
-	io.vteial.seetu.model.User userE = sessionService.login(session, userA)
+	SessionUserDto sessionUserDto = sessionService.login(session, userDto)
 	responseDto.data = sessionService.properties(session, user)
 	responseDto.type = 0
 	responseDto.message = 'Successfully logged in...'

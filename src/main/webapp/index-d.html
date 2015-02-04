@@ -27,21 +27,23 @@
 		<div class="column">
 			<div class="ui three column grid">
 				<div class="column">
-					<strong>{{viewName}}</strong>
+					<strong>{{viewName | capitalizeFilter}}</strong>
 				</div>
                 <div class="column">
                 	&nbsp;
                 </div>
-                <div class="column right aligned">
-                	<strong>vteial</strong> / <strong>Manager</strong>
+                <div class="column right aligned" x-ng-show="isLoggedIn">
+<strong>{{sessionContext.sessionUser.firstName}} / {{sessionContext.sessionUser.id}} / {{sessionContext.sessionUser.roleId}}</strong>
                 </div>
 			</div>
 		</div>
 	</div>
-	
-    <div class="ui grid">
 
+    <div class="ui grid">
+	   	
 		<div class="ui fitted divider"></div>
+
+		<semantic-notify-directive></semantic-notify-directive>
 
  		<div class="row" x-ng-view></div>
    
@@ -85,14 +87,24 @@
 <script type="text/javascript" src="modules/init.js"></script>
 <script type="text/javascript" src="modules/common.js"></script>
 
+<script type="text/javascript" src="modules/z-semantic/wydNotifyBySemantic.js"></script>
+
+<script type="text/javascript" src="modules/test/testController.js"></script>
 <script type="text/javascript" src="modules/home/indexController.js"></script>
+<script type="text/javascript" src="modules/home/homeController.js"></script>
+
+<script type="text/javascript" src="modules/session/sessionService.js"></script>
+
 <script type="text/javascript" src="modules/session/loginController.js"></script>
 <script type="text/javascript" src="modules/session/logoutController.js"></script>
 <script type="text/javascript" src="modules/session/settingController.js"></script>
-<script type="text/javascript" src="modules/home/homeController.js"></script>
+
 <script type="text/javascript" src="modules/account/accountController.js"></script>
+
 <script type="text/javascript" src="modules/user/userController.js"></script>
+
 <script type="text/javascript" src="modules/subscriber/subscriberController.js"></script>
+
 <script type="text/javascript" src="modules/chit/chitController.js"></script>
 
 <script type="text/javascript" src="modules/index-d.js"></script>
