@@ -3,8 +3,8 @@ package io.vteial.seetu
 import groovyx.gaelyk.plugins.PluginBaseScript
 import io.vteial.seetu.service.impl.DefaultAccountService
 import io.vteial.seetu.service.impl.DefaultAutoNumberService
-import io.vteial.seetu.service.impl.DefaultCustomerService
-import io.vteial.seetu.service.impl.DefaultItemService
+import io.vteial.seetu.service.impl.DefaultSubscriberService
+import io.vteial.seetu.service.impl.DefauChitService
 import io.vteial.seetu.service.impl.DefaultSessionService
 import io.vteial.seetu.service.impl.DefaultUserService
 
@@ -29,11 +29,11 @@ class GeneralPlugin extends PluginBaseScript {
 		uS.autoNumberService = anS
 		uS.accountService = aS
 
-		DefaultCustomerService cS = new DefaultCustomerService()
+		DefaultSubscriberService cS = new DefaultSubscriberService()
 		cS.autoNumberService = anS
 		cS.accountService = aS
 
-		DefaultItemService iS = new DefaultItemService()
+		DefauChitService iS = new DefauChitService()
 		iS.autoNumberService = anS
 		iS.accountService = aS
 

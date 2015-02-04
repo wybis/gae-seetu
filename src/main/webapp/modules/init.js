@@ -1,8 +1,16 @@
-console.log('angular module init started...');
+var dependents = [ 'ngRoute', 'ngSanitize' ];
+dependents.push('classy');
+dependents.push('classy-initScope');
+dependents.push('ngStorage');
+dependents.push('green.inputmask4angular');
+//dependents.push('ui.bootstrap');
+//dependents.push('ui.select');
+var app = angular.module('app', dependents);
 
-var appFilters = angular.module('app.filters', []);
-var appDirectives = angular.module('app.directives', []);
-var appServices = angular.module('app.services', []);
-var appControllers = angular.module('app.controllers', []);
-
-console.log('angular module init finished...');
+app.config(function($httpProvider) {
+	$httpProvider.interceptors.push('generalHttpInterceptor');
+});
+//
+//app.config(function(uiSelectConfig) {
+//	uiSelectConfig.theme = 'select2';
+//});

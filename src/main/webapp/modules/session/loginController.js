@@ -1,45 +1,17 @@
-function loginController($rootScope, $scope, $log, $location, $sessionStorage,
-		bootstrapNotifyService, sessionService, $timeout) {
-	$rootScope.viewName = 'SignIn';
+app.classy.controller({
 
-	var wydNotifyService = bootstrapNotifyService;
+	name : 'loginController',
 
-	$scope.message = null
+	inject : [ '$rootScope', '$scope', '$log' ],
 
-	$scope.user = {
-		id : 'vteial',
-		password : ''
-	};
+	data : {
+		log : '$log'
+	},
 
-	function signin() {
-		wydNotifyService.removeAll();
-		$log.info('singing in...');
-		$scope.message = null;
+	init : function() {
+		this.$rootScope.viewName = 'Sign In';
 
-		sessionService.login($scope.user).then(function(response) {
-			if (response.type === 1) {
-				$scope.message = response.message;
-			} else {
-				$scope.user.password = '';
-				$rootScope.isLoggedIn = true;
-				$rootScope.homeView = '/home';
-				var locPath = $sessionStorage.currentLocationPath;
-				$log.info('Last Stored Location : ', locPath);
-				if (!locPath) {
-					locPath = $rootScope.homeView;
-				}
-				$location.path(locPath);
-			}
-		})
+		this.log.info('loginController...');
 	}
-	$scope.signin = signin;
 
-	// $timeout(function() {
-	// $log.info('Before signin...');
-	// $scope.signin();
-	// $log.info('After signin...');
-	// }, 1000);
-
-	$log.debug('loginController...');
-}
-appControllers.controller('loginController', loginController);
+});

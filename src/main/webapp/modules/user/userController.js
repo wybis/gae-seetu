@@ -1,14 +1,17 @@
-function userController($rootScope, $scope, $log, userService) {
-	$rootScope.viewName = 'Users';
+app.classy.controller({
 
-	$scope.items = userService.items;
+	name : 'userController',
 
-	$scope.refresh = function() {
-		userService.all();
-	};
+	inject : [ '$rootScope', '$scope', '$log' ],
 
-	$scope.refresh();
+	data : {
+		log : '$log'
+	},
 
-	$log.debug('userController...');
-}
-appControllers.controller('userController', userController);
+	init : function() {
+		this.$rootScope.viewName = 'Users';
+
+		this.log.info('userController...');
+	}
+
+});

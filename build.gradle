@@ -34,8 +34,8 @@ targetCompatibility = compatibilityVersion
 appengine {
 	//httpAddress = '192.168.1.104'
 	//httpAddress = '27.56.186.42'
-	httpPort = 8182
-	disableUpdateCheck = true
+	httpPort = 8181
+	disableUpdateCheck = false
 
 	appcfg {
 		email = 'vteial@gmail.com'
@@ -54,7 +54,7 @@ appengine {
 dependencies {
 	def jacksonVersion = '2.4.3'
 	def groovyVersion = '2.3.7'
-	def gaeVersion = '1.9.4'
+	def gaeVersion = '1.9.15'
 
 	//compile 'org.jsoup:jsoup:1.8.1'
 	compile 'eu.bitwalker:UserAgentUtils:1.14'

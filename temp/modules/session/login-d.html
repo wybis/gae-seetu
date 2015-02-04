@@ -1,0 +1,32 @@
+<br />
+
+<div class="col-md-4 col-md-offset-4">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			&nbsp;{{message}}	
+		</div>
+		<div class="panel-body">
+			<form>
+			<fieldset>
+				<div class="form-group">
+	          		<label>User Id</label>
+	          		<input class="form-control" type="text" placeholder="User Id"
+	          			x-ng-model="user.id">
+				</div>
+		        <div class="form-group">
+	    			<label>Password</label>
+	          		<input class="form-control" type="text" placeholder="Password"
+	          			x-ng-model="user.password">
+				</div>
+				<div class="form-group">
+	          		<input type="checkbox" x-ng-model="rememberMe"> Remember Me
+	        	</div>
+		    	<hr/>
+		   		<button class="btn btn-primary btn-block" x-ng-click="signin()">
+		      		Login
+		    	</button>
+	    	</fieldset>	
+			</form>
+		</div>
+	</div>
+</div>

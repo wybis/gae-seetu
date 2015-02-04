@@ -1,6 +1,17 @@
-function settingController($rootScope, $scope, $log) {
-	$rootScope.viewName = 'Settings';
+app.classy.controller({
 
-	$log.debug('settingController...');
-}
-appControllers.controller('settingController', settingController);
+	name : 'settingController',
+
+	inject : [ '$rootScope', '$scope', '$log' ],
+
+	data : {
+		log : '$log'
+	},
+
+	init : function() {
+		this.$rootScope.viewName = 'Settings';
+
+		this.log.info('settingController...');
+	}
+
+});

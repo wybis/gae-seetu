@@ -1,7 +1,7 @@
 package io.vteial.seetu.web.system;
 
-import io.vteial.seetu.model.Customer
-import io.vteial.seetu.model.Item
+import io.vteial.seetu.model.Subscriber
+import io.vteial.seetu.model.Chit
 import io.vteial.seetu.model.Role
 import io.vteial.seetu.model.User
 import io.vteial.seetu.model.constants.UserStatus

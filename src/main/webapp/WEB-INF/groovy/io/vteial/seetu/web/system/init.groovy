@@ -1,7 +1,7 @@
 package io.vteial.seetu.web.system;
 
-import io.vteial.seetu.model.Customer
-import io.vteial.seetu.model.Item
+import io.vteial.seetu.model.Subscriber
+import io.vteial.seetu.model.Chit
 import io.vteial.seetu.model.Role
 import io.vteial.seetu.model.User
 import io.vteial.seetu.model.constants.UserStatus
@@ -24,7 +24,7 @@ try {
 
 	List<Long> subscriberAccountIds = []
 	for(int i = 1; i < 7; i++) {
-		Customer subscriber = new Customer()
+		Subscriber subscriber = new Subscriber()
 		subscriber.identiyNumber = "subscriber-$i"
 		subscriber.firstName = "Subscriber - $i"
 		subscriber.lastName = "Subscriber - $i"
@@ -34,7 +34,7 @@ try {
 		subscriberAccountIds << subscriber.accountId
 	}
 
-	Item item = new Item()
+	Chit item = new Chit()
 	item.name = 'Six Thousand'
 	item.value = 6000
 	item.opearatorCommision = 5

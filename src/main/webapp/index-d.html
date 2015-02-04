@@ -1,18 +1,12 @@
 <html lang="en" class="no-js" x-ng-app="app" x-ng-csp x-ng-controller="rootController">
 <head>
 <title>Seetu</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" >
-<link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css">
+<meta name=viewport content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="assets/ui-select/selectize.bootstrap3.css" />
-<link rel="stylesheet" href="assets/ui-select/select.min.css" />
+<link rel="stylesheet" href="assets/semantic-ui/semantic.min.css">
 
-<link rel="stylesheet" href="assets/style-1.css" />
-<link rel="stylesheet" href="assets/style-0.css" />
+<link rel="stylesheet" href="assets/index-d.css">
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -23,38 +17,53 @@
 </head>
 <body x-ng-clock>
 
-<header class="navbar navbar-default navbar-fixed-top" x-role="navigation">
-	<x-header-navigator-directive></x-header-navigator-directive>
+<nav class="ui fixed red inverted menu navbar page grid" 
+	x-ng-include="'modules/z-semantic/headerNavigatorDirective-d.html'">
+</nav>  
 
-	<x-bread-crumb-directive></x-bread-crumb-directive>
+<div class="ui page grid">
 
-</header>
-
-
-<bootstrap-notify-directive></bootstrap-notify-directive>
-
-<section class="container-fluid" x-ng-view></section>
-
-<footer class="navbar navbar-default navbar-fixed-bottom" x-role="navigation">
-	<!-- 
-	<x-footer-bar-directive></x-footer-bar-directive>
-	<hr style="margin : 5px 0">
-	-->
-	<br/>
-	<x-footer-navigator-directive></x-footer-navigator-directive>
-</footer>
-
-<script type="text/javascript"
-	src="assets/lib/lodash.min.js"></script>
-<script type="text/javascript"
-	src="assets/lib/underscore.string.min.js"></script>
-<script type="text/javascript" 
-	src="assets/lib/moment.min.js"></script>
-<script type="text/javascript" 
-	src="assets/lib/jquery.min.js"></script>
-<script type="text/javascript" 
-	src="assets/lib/holder.js"></script>
+	<div class="row">
+		<div class="column">
+			<div class="ui three column grid">
+				<div class="column">
+					<strong>{{viewName}}</strong>
+				</div>
+                <div class="column">
+                	&nbsp;
+                </div>
+                <div class="column right aligned">
+                	<strong>vteial</strong> / <strong>Manager</strong>
+                </div>
+			</div>
+		</div>
+	</div>
 	
+    <div class="ui grid">
+
+		<div class="ui fitted divider"></div>
+
+ 		<div class="row" x-ng-view></div>
+   
+    </div>
+
+</div>
+
+<div class="ui hidden divider"></div>
+<div class="ui fitted divider"></div>  
+
+<x-ng-include src="'modules/z-semantic/footerNavigatorDirective-d.html'"></x-ng-include>
+
+
+<script type="text/javascript"
+	src="assets/lodash.min.js"></script>
+<script type="text/javascript" 
+	src="assets/moment.min.js"></script>
+<script type="text/javascript" 
+	src="assets/jquery.min.js"></script>
+<script type="text/javascript" 
+	src="assets/semantic-ui/semantic.min.js"></script>
+
 <script type="text/javascript"
 	src="assets/angular/13x/angular.js"></script>
 <script type="text/javascript"
@@ -63,44 +72,30 @@
 	src="assets/angular/13x/angular-sanitize.min.js"></script>
 
 <script type="text/javascript" 
-	src="assets/lib/ngStorage.min.js"></script>
-
-<script type="text/javascript" 
-	src="assets/lib/ui-bootstrap-tpls-0.12.0.min.js"></script>
-
-<script type="text/javascript"
-	src='assets/ui-select/select.min.js'></script>
+	src="assets/ngStorage.min.js"></script>
 <script type="text/javascript" 
 	src="assets/inputmask/jquery.inputmask.bundle.min.js"></script>
 <script type="text/javascript" 
 	src="assets/inputmask/green.inputmask4angular.js"></script>
+<script type="text/javascript" 
+	src="assets/angular-classy/angular-classy.min.js"></script>
+<script type="text/javascript" 
+	src="assets/angular-classy/classy-initScope.js"></script>
 
 <script type="text/javascript" src="modules/init.js"></script>
-<script type="text/javascript" src="modules/zgeneral/bootstrapNotify.js"></script>
-
-<script type="text/javascript" src="modules/session/sessionService.js"></script>
-
-<script type="text/javascript" src="modules/item/itemController.js"></script>
-<script type="text/javascript" src="modules/item/itemService.js"></script>
-<script type="text/javascript" src="modules/itemTransaction/itemTransactionController.js"></script>
-<script type="text/javascript" src="modules/itemTransaction/itemTransactionService.js"></script>
-<script type="text/javascript" src="modules/customer/customerService.js"></script>
-<script type="text/javascript" src="modules/customer/customerController.js"></script>
-<script type="text/javascript" src="modules/account/accountController.js"></script>
-<script type="text/javascript" src="modules/account/accountService.js"></script>
-<script type="text/javascript" src="modules/accountTransaction/accountTransactionController.js"></script>
-<script type="text/javascript" src="modules/accountTransaction/accountTransactionService.js"></script>
-<script type="text/javascript" src="modules/user/userService.js"></script>
-<script type="text/javascript" src="modules/user/userController.js"></script>
+<script type="text/javascript" src="modules/common.js"></script>
 
 <script type="text/javascript" src="modules/home/indexController.js"></script>
-<script type="text/javascript" src="modules/session/settingController.js"></script>
 <script type="text/javascript" src="modules/session/loginController.js"></script>
 <script type="text/javascript" src="modules/session/logoutController.js"></script>
+<script type="text/javascript" src="modules/session/settingController.js"></script>
+<script type="text/javascript" src="modules/home/homeController.js"></script>
+<script type="text/javascript" src="modules/account/accountController.js"></script>
+<script type="text/javascript" src="modules/user/userController.js"></script>
+<script type="text/javascript" src="modules/subscriber/subscriberController.js"></script>
+<script type="text/javascript" src="modules/chit/chitController.js"></script>
 
-<script type="text/javascript" src="modules/common.js"></script>
-<script type="text/javascript" src="modules/directives.js"></script>
-<script type="text/javascript" src="modules/main-d.js"></script>
+<script type="text/javascript" src="modules/index-d.js"></script>
 
 </body>
 </html>

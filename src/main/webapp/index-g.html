@@ -1,12 +1,12 @@
 <html lang="en" class="no-js" x-ng-app="app" x-ng-csp x-ng-controller="rootController">
 <head>
 <title>Seetu - Dev Console</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" >
-<link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css">
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="assets/semantic-ui/semantic.min.css">
+
+<link rel="stylesheet" href="assets/index-d.css">
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -17,69 +17,91 @@
 </head>
 <body x-ng-clock>
 
-<br/>
+<div class="ui grid">
 
-<div class="row">
-	<div class="col-md-2 text-center">
-		<strong>Seetu Console</strong>
-	</div>
-	<div class="col-md-5 text-center">
-		<a class="navbar-link"  href="_ah/admin/">Google Datastore</a>
-		<b> | </b>
-		<a class="navbar-link"  href="_ah/gaelyk-datastore-viewer/browse">Gaelyk Datastore</a>
-		<b> | </b>
-		<a class="navbar-link"  href="_ah/gaelyk-console/">Gaelyk Console</a>
-	</div>
-	<div class="col-md-5">
-		<a href="index-d.html" class="btn btn-primary">Destop/Tablet</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="index-m.html" class="btn btn-primary">Tablet/Mobile</a>
-	</div>
-</div>
-
-<br/>
-
-<div>
-	<div class="col-md-2">
-		<button class="btn btn-default btn-block" 
-			x-ng-click="execute('/system/reset')">Reset</button> 
-		<br/>
-		<button class="btn btn-default btn-block"
-			x-ng-click="execute('/system/init')">Init Foreman One</button>
-		<br/>
-		<button class="btn btn-default btn-block"
-			x-ng-click="execute('/system/clear')">Clear Foreman One</button>
-		<br/>
-		<button class="btn btn-default btn-block"
-			x-ng-click="execute('/system/initTransactions')">Run Foreman Transactions</button>
-		<br/>
-		<button class="btn btn-default btn-block"
-			x-ng-click="execute('/system/clearTransactions')">Clear Foreman Transactions</button>
-		<br/>
-		<button class="btn btn-default btn-block"
-			x-ng-click="execute('/sessions/properties')">Session Properties</button>
-	</div>
-	<div class="col-md-10">
-		<div class="panel panel-default">
-			<div class="panel-heading">Message</div>
-			<div class="panel-body">
-				<pre>{{message}}</pre>
+	<div class="row">
+		<div class="column">
+			<div class="ui segment">
+			
+			<div class="ui three column grid">
+				<div class="two wide column">
+					<h4>Seetu Dev Console</h4>
+				</div>
+                <div class="six wide column center aligned">
+                	<a href="_ah/admin/" class="ui basic button">Google Datastore</a>
+                	<a href="index-m.html" class="ui basic button">Tablet/Mobile</a>
+                	<a href="index-d.html" class="ui basic button">Destop/Tablet</a>
+                </div>
+                <div class="eight wide column center aligned">
+                	<button class="ui basic button"
+						x-ng-click="execute('/ping')">Ping</button>
+					<button class="ui basic button"
+						x-ng-click="execute('/info')">Info</button>
+					<button class="ui basic button"
+						x-ng-click="execute('/sessions/properties')">Session Props</button>
+					<button class="ui basic button" 
+						x-ng-click="execute('/system/reset')">Reset</button> 
+					<button class="ui basic button"
+						x-ng-click="execute('/system/clear')">Clear</button>
+					<button class="ui basic button"
+						x-ng-click="execute('/system/clearTransactions')">Clear Trans</button>
+                </div>
+			</div>
+			
 			</div>
 		</div>
 	</div>
+	
+	<div class="row">
+		<div class="column">
+			<div class="ui two column grid">
+				<div class="column">
+					<div class="ui segment">
+						<form class="ui form">
+							<div class="field">
+      							<label>Foreman JSON</label>
+      							<div class="field">
+      								<select  x-ng-model="masterJson" 
+										x-ng-change="onMasterJsonChange()"
+										x-ng-options="item.name for item in masterJsons">
+      								</select>
+      							</div>
+      						</div>
+                    		<div class="field">
+                    			<textarea x-ng-model="masterJson.json"></textarea>
+                    		</div>
+                    	</form>
+                    </div>
+				</div>
+				
+				<div class="column">
+					<div class="ui block top attached header">
+						Response Message
+					</div>
+                    <div class="ui bottom attached segment">
+                    	<div class="ui message">
+					  		<div class="header">
+    							{{httpResponse.path}}
+  							</div>
+  							<pre>{{httpResponse.text}}</pre>
+						</div>
+                    </div>
+				</div>
+			
+			</div>
+		</div>
+	</div>			
+	
 </div>
 
-
 <script type="text/javascript"
-	src="assets/lib/lodash.min.js"></script>
-<script type="text/javascript"
-	src="assets/lib/underscore.string.min.js"></script>
+	src="assets/lodash.min.js"></script>
 <script type="text/javascript" 
-	src="assets/lib/moment.min.js"></script>
+	src="assets/moment.min.js"></script>
 <script type="text/javascript" 
-	src="assets/lib/jquery.min.js"></script>
+	src="assets/jquery.min.js"></script>
 <script type="text/javascript" 
-	src="assets/lib/holder.js"></script>
+	src="assets/semantic-ui/semantic.min.js"></script>
 	
 <script type="text/javascript"
 	src="assets/angular/13x/angular.js"></script>
@@ -89,13 +111,19 @@
 	src="assets/angular/13x/angular-sanitize.min.js"></script>
 
 <script type="text/javascript" 
-	src="assets/lib/ngStorage.min.js"></script>
-
+	src="assets/ngStorage.min.js"></script>
+<script type="text/javascript" 
+	src="assets/inputmask/jquery.inputmask.bundle.min.js"></script>
+<script type="text/javascript" 
+	src="assets/inputmask/green.inputmask4angular.js"></script>
+<script type="text/javascript" 
+	src="assets/angular-classy/angular-classy.min.js"></script>
+<script type="text/javascript" 
+	src="assets/angular-classy/classy-initScope.js"></script>
+ 
 <script type="text/javascript" src="modules/init.js"></script>
-<script type="text/javascript" src="modules/home/indexController.js"></script>
-
 <script type="text/javascript" src="modules/common.js"></script>
-<script type="text/javascript" src="index-g.js"></script>
+<script type="text/javascript" src="modules/index-g.js"></script>
 
 </body>
 </html>

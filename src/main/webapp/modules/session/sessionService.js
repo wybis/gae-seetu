@@ -57,6 +57,7 @@ function sessionService($log, $http, $q) {
 
 		return deferred.promise;
 	};
+
 	return service;
 }
 appServices.factory('sessionService', sessionService);

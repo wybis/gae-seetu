@@ -5,9 +5,9 @@ import io.vteial.seetu.model.AccountTransaction
 import io.vteial.seetu.model.Address
 import io.vteial.seetu.model.AutoNumber
 import io.vteial.seetu.model.Country
-import io.vteial.seetu.model.Customer
-import io.vteial.seetu.model.Item
-import io.vteial.seetu.model.ItemTransaction
+import io.vteial.seetu.model.Subscriber
+import io.vteial.seetu.model.Chit
+import io.vteial.seetu.model.ChitTransaction
 import io.vteial.seetu.model.User
 
 try {
@@ -36,19 +36,19 @@ try {
 	}
 	println entities.size() + ' users deleted'
 
-	entities = Customer.findAll()
+	entities = Subscriber.findAll()
 	entities.each { entity ->
 		entity.delete()
 	}
 	println entities.size() + ' customers deleted'
 
-	entities = Item.findAll()
+	entities = Chit.findAll()
 	entities.each { entity ->
 		entity.delete()
 	}
 	println entities.size() + ' items deleted'
 
-	entities = ItemTransaction.findAll()
+	entities = ChitTransaction.findAll()
 	entities.each { entity ->
 		entity.delete()
 	}

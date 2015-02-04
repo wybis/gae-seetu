@@ -1,14 +1,17 @@
-function accountController($rootScope, $scope, $log, accountService) {
-	$rootScope.viewName = 'Accounts';
+app.classy.controller({
 
-	$scope.items = accountService.items;
+	name : 'accountController',
 
-	$scope.refresh = function() {
-		accountService.all();
-	};
+	inject : [ '$rootScope', '$scope', '$log' ],
 
-	$scope.refresh();
+	data : {
+		log : '$log'
+	},
 
-	$log.debug('accountController...');
-}
-appControllers.controller('accountController', accountController);
+	init : function() {
+		this.$rootScope.viewName = 'Accounts';
+
+		this.log.info('accountController...');
+	}
+
+});

@@ -1,12 +1,17 @@
-function logoutController($rootScope, $scope, $log, sessionService, $location) {
-	$rootScope.viewName = 'SignOut';
+app.classy.controller({
 
-	sessionService.logout().then(function(response) {
-		$rootScope.isLoggedIn = false;
-		$rootScope.homeView = '/index';
-		$location.path($rootScope.homeView);
-	});
+	name : 'logoutController',
 
-	$log.debug('logoutContoller...');
-}
-appControllers.controller('logoutController', logoutController);
+	inject : [ '$rootScope', '$scope', '$log' ],
+
+	data : {
+		log : '$log'
+	},
+
+	init : function() {
+		this.$rootScope.viewName = 'Signout';
+
+		this.log.info('logoutController...');
+	}
+
+});

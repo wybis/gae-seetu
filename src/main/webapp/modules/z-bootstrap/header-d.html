@@ -1,0 +1,48 @@
+<header class="navbar navbar-default navbar-fixed-top">
+<div class="container-fluid">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" 
+			x-toggle="collapse" x-target=".navbar-inverse-collapse"">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="angular-classy-bootstrap.html">Seetu</a>
+	</div>
+	<div class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+			<li><a x-ng-href="#{{homeView}}"><i class="fa fa-home"></i> Home</a></li>
+		</ul>
+		<ul class="nav navbar-nav">
+			<li><a href="#/chits"> Chits</a></li>
+			<li><a href="#/subscribers"> Subscribers</a></li>
+			<li><a href="#/accounts"> Accounts</a></li>
+			<li><a href="#/users"> Users</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#/signin"><i class="fa fa-sign-in"></i> Login</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#/settings"><i class="fa fa-cog"></i> Settings</a></li>
+			<li><a href="#/signout"><i class="fa fa-sign-out"></i> Logout</a></li>
+		</ul>
+	</div>
+</div>
+
+<hr style="margin : 3px 0"/>
+
+<div class="container-fluid">
+
+	<div class="col-md-3">
+		<strong><small>{{viewName | capitalizeFilter}}</small></strong>
+	</div>
+	<div class="col-md-9 text-right">
+		<span class="text-primary"><strong><small>
+		{{session.user.id}} / {{session.user.role.name}}
+		</small></strong></span>
+	</div>
+
+</div>
+
+</header>
