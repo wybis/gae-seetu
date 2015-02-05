@@ -37,7 +37,7 @@ app.classy.controller({
 			var ss = this.sessionService.login(userReq);
 			ss.then(function(response) {
 				user.loadingClass = '';
-				// $log.info(response);
+				//$log.info(response);
 				if (response.type === 1) {
 					user.message = response.message;
 					wydNotifyService.addError(user.message, true);

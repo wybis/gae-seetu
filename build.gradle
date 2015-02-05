@@ -38,7 +38,7 @@ appengine {
 	disableUpdateCheck = false
 
 	appcfg {
-		email = 'vteial@gmail.com'
+		email = 'vteial@wybis.com'
 		noCookies = true
 		oauth2 = true
 
@@ -47,7 +47,7 @@ appengine {
 			outputFile = file('prodserver-log.txt')
 		}
 
-		app { id = 'myseetu' }
+		app { id = 'wybis-seetu' }
 	}
 }
 
