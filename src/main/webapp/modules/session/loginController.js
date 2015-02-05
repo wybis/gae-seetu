@@ -15,6 +15,7 @@ app.classy.controller({
 		this.$scope.user = {
 			id : '',
 			password : '',
+			loadingClass : '',
 			message : null
 		};
 
@@ -32,8 +33,10 @@ app.classy.controller({
 				id : user.id,
 				password : user.password
 			};
+			user.loadingClass = 'loading';
 			var ss = this.sessionService.login(userReq);
 			ss.then(function(response) {
+				user.loadingClass = '';
 				// $log.info(response);
 				if (response.type === 1) {
 					user.message = response.message;

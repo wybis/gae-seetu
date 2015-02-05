@@ -14,6 +14,8 @@ try {
 	responseDto.data = sessionService.properties(session, user)
 	responseDto.type = 0
 	responseDto.message = 'Successfully logged in...'
+	
+	Thread.sleep(1000 * 2)
 }
 catch(InvalidCredentialException e) {
 }

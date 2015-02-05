@@ -4,7 +4,7 @@
 
 <meta name=viewport content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="assets/semantic-ui/semantic.min.css">
+<link rel="stylesheet" href="assets/semantic-ui/1.8.x/semantic.min.css">
 
 <link rel="stylesheet" href="assets/index-d.css">
 
@@ -23,39 +23,28 @@
 
 <div class="ui page grid">
 
+	<div class="four wide column">
+		<strong>{{viewName | capitalizeFilter}}</strong>
+	</div>
+	<div class="eight wide column">
+		&nbsp;
+	</div>
+	<div class="four wide column right aligned" x-ng-show="isLoggedIn">
+		<strong>{{sessionContext.sessionUser.firstName}} / {{sessionContext.sessionUser.id}} / {{sessionContext.sessionUser.roleId}}</strong>
+	</div>
+	
+	<div class="ui fitted divider"></div>
+	
+	<semantic-notify-directive></semantic-notify-directive>
+	
+	<div class="row" x-ng-view></div>
+
 	<div class="row">
-		<div class="column">
-			<div class="ui three column grid">
-				<div class="column">
-					<strong>{{viewName | capitalizeFilter}}</strong>
-				</div>
-                <div class="column">
-                	&nbsp;
-                </div>
-                <div class="column right aligned" x-ng-show="isLoggedIn">
-<strong>{{sessionContext.sessionUser.firstName}} / {{sessionContext.sessionUser.id}} / {{sessionContext.sessionUser.roleId}}</strong>
-                </div>
-			</div>
-		</div>
+		<div class="ui fitted divider"></div>  
+		<x-ng-include src="'modules/z-semantic/footerNavigatorDirective-d.html'"></x-ng-include>		
 	</div>
 
-    <div class="ui grid">
-	   	
-		<div class="ui fitted divider"></div>
-
-		<semantic-notify-directive></semantic-notify-directive>
-
- 		<div class="row" x-ng-view></div>
-   
-    </div>
-
 </div>
-
-<div class="ui hidden divider"></div>
-<div class="ui fitted divider"></div>  
-
-<x-ng-include src="'modules/z-semantic/footerNavigatorDirective-d.html'"></x-ng-include>
-
 
 <script type="text/javascript"
 	src="assets/lodash.min.js"></script>
@@ -64,7 +53,7 @@
 <script type="text/javascript" 
 	src="assets/jquery.min.js"></script>
 <script type="text/javascript" 
-	src="assets/semantic-ui/semantic.min.js"></script>
+	src="assets/semantic-ui/1.8.x/semantic.min.js"></script>
 
 <script type="text/javascript"
 	src="assets/angular/13x/angular.js"></script>

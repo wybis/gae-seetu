@@ -2,27 +2,49 @@
 
 <div class="six wide column">
  		
-	<div class="ui form segment">
+	<div class="ui form segment" x-ng-class="user.loadingClass"">
 		<h4 class="ui dividing header">Sign In</h4>
 		<div class="field">
 			<label>User Id</label>
 			<div class="field">
-          		<input type="text" name="first-name" placeholder="User Id" 
-          			x-ng-model="user.id">
+				<div class="ui left icon corner labeled input">
+          			<i class="user icon"></i>
+          			<input type="text" name="first-name" placeholder="User Id" 
+          				x-ng-model="user.id">
+ 					<div class="ui corner label">
+    					<i class="asterisk icon"></i>
+  					</div>          			
+          		</div>
         	</div>
         </div>	
 		<div class="field">
 			<label>Password</label>
 			<div class="field">
-          		<input type="password" name="first-name" placeholder="Password" 
-          			x-ng-model="user.password">
+				<div class="ui left icon corner labeled input">
+					<i class="lock icon"></i>
+	          		<input type="password" name="first-name" placeholder="Password" 
+    	      			x-ng-model="user.password">
+ 					<div class="ui corner label">
+    					<i class="asterisk icon"></i>
+  					</div>
+  				</div>	          			
         	</div>
         </div>
-		<button class="ui primary button" 
-			x-ng-disabled="user.id == ''"
-			x-ng-click="signin()">
-			<i class="sign in icon"></i> Sign In
-		</button>	
+        <div class="two fields">
+        	<div class="field">
+				<button class="ui primary button" 
+					x-ng-disabled="user.id == ''"
+					x-ng-click="signin()">
+					<i class="sign in icon"></i> Sign In
+				</button>
+			</div>
+			<div class="field ui right aligned">
+				<a href="#/recovery">Forget your Password?</a>
+			</div>	
+		</div>
+		<div class="field">
+			Don't you have an account? Please sign up <a href="#/sginup">here</a>.
+		</div>
 	</div>
 	
 </div>
